@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de viagens</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="/script/script.js"></script>
+</head>
+<body>
+  <header>
+    <button onclick="abrirModal()">+ Adicionar viagem</button>
+</header>
+
+<div class="filter-container">
+  <input type="text" id="searchInput" placeholder="Digite o nome do usuário...">
+  <button class="filter-btn" onclick="applyFilter()">Filtrar</button>
+  <button class="reset-btn" onclick="resetFilter()">Retirar Filtro</button>
+</div>
+
+    <table id="userTable">
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Origem</th>
+            <th>Destino</th>
+            <th>Imagem</th>
+            <th>Número de Voo</th>
+            <th>Ações</th>
+        </tr>
+        <tr class="dados">
+            <td style="background-color: #C6E0FF;">Julio</td>
+            <td style="background-color: #C6E0FF;">(11)998475374</td>
+            <td style="background-color: #C6E0FF;">111.111.111-11</td>
+            <td style="background-color: #C6E0FF;">julio17@gmail.com</td>
+            <td style="background-color: #C6E0FF;">SP</td>
+            <td style="background-color: #C6E0FF;">RJ</td>
+            <td style="background-color: #C6E0FF;"><img src="img/julio.png" alt=""></td>
+            <td style="background-color: #C6E0FF;">934</td>
+            <td style="background-color: #C6E0FF;">
+                <img src="img/Edição.png" alt="Icone de edição" class="Editar action-btn" onclick="editarViagem(this)">
+                <img src="img/Excluir.png" alt="Icone de excluir" class="Excluir action-btn" onclick="excluirViagem(this)">
+            </td>
+        </tr>
+        <tr class="dados">
+            <td style="background-color: #206BC1;">Daniel</td>
+            <td style="background-color: #206BC1;">(11)678391003</td>
+            <td style="background-color: #206BC1;">222.222.222-22</td>
+            <td style="background-color: #206BC1;">daniel22@gmail.com</td>
+            <td style="background-color: #206BC1;">MG</td>
+            <td style="background-color: #206BC1;">BH</td>
+            <td style="background-color: #206BC1;"><img src="img/daniel.png"></td>
+            <td style="background-color: #206BC1;">789</td>
+            <td style="background-color: #206BC1;">
+                <img src="img/Edição.png" alt="Icone de edição" class="Editar action-btn" onclick="editarViagem(this)">
+                <img src="img/Excluir.png" alt="Icone de excluir" class="Excluir action-btn" onclick="excluirViagem(this)">
+            </td>
+        </tr>
+        <tr class="dados">
+          <td style="background-color: #C6E0FF;">Arthur</td>
+          <td style="background-color: #C6E0FF;">(11)953783299</td>
+          <td style="background-color: #C6E0FF;">333.333.333-33</td>
+          <td style="background-color: #C6E0FF;">arthur92@gmail.com</td>
+          <td style="background-color: #C6E0FF;">BH</td>
+          <td style="background-color: #C6E0FF;">SP</td>
+          <td style="background-color: #C6E0FF;"><img src="img/Arthur.png"></td>
+          <td style="background-color: #C6E0FF;">153</td>
+          <td style="background-color: #C6E0FF;">
+            <img src="img/Edição.png" alt="Icone de edição" class="Editar action-btn" onclick="editarViagem(this)">
+            <img src="img/Excluir.png" alt="Icone de excluir" class="Excluir action-btn" onclick="excluirViagem(this)">
+          </td>
+       </tr>
+       <tr class="dados">
+        <td style="background-color: #206BC1;">Ana Karine</td>
+        <td style="background-color: #206BC1;">(11)849349713</td>
+        <td style="background-color: #206BC1;">444.444.444-44</td>
+        <td style="background-color: #206BC1;">ana.karine30@gmail.com</td>
+        <td style="background-color: #206BC1;">MT</td>
+        <td style="background-color: #206BC1;">PR</td>
+        <td style="background-color: #206BC1;"><img src="img/Ana Karine.png"></td>
+        <td style="background-color: #206BC1;">147</td>
+        <td style="background-color: #206BC1;">
+          <img src="img/Edição.png" alt="Icone de edição" class="Editar action-btn" onclick="editarViagem(this)">
+          <img src="img/Excluir.png" alt="Icone de excluir" class="Excluir action-btn" onclick="excluirViagem(this)">
+        </td>
+      </tr>
+      <tr class="dados">
+        <td style="background-color: #C6E0FF;">Isabella</td>
+        <td style="background-color: #C6E0FF;">(11)515626464</td>
+        <td style="background-color: #C6E0FF;">555.555.555.55</td>
+        <td style="background-color: #C6E0FF;">isabella05@gmail.com</td>
+        <td style="background-color: #C6E0FF;">PR</td>
+        <td style="background-color: #C6E0FF;">DF</td>
+        <td style="background-color: #C6E0FF;"><img src="img/Isabella.png"></td>
+        <td style="background-color: #C6E0FF;">519</td>
+        <td style="background-color: #C6E0FF;">
+          <img src="img/Edição.png" alt="Icone de edição" class="Editar action-btn" onclick="editarViagem(this)">
+          <img src="img/Excluir.png" alt="Icone de excluir" class="Excluir action-btn" onclick="excluirViagem(this)">
+        </td>
+     </tr>
+     <tr class="dados">
+      <td style="background-color: #206BC1;">Bernardo</td>
+      <td style="background-color: #206BC1;">(11)556129875</td>
+      <td style="background-color: #206BC1;">666.666.666-66</td>
+      <td style="background-color: #206BC1;">bernardo15@gmail.com</td>
+      <td style="background-color: #206BC1;">DF</td>
+      <td style="background-color: #206BC1;">AM</td>
+      <td style="background-color: #206BC1;"><img src="img/Bernardo.png"></td>
+      <td style="background-color: #206BC1;">369</td>
+      <td style="background-color: #206BC1;">
+        <img src="img/Edição.png" alt="Icone de edição" class="Editar action-btn" onclick="editarViagem(this)">
+        <img src="img/Excluir.png" alt="Icone de excluir" class="Excluir action-btn" onclick="excluirViagem(this)">
+      </td>
+    </tr>
+    </table>
+   
+    <footer>
+      <div class="footer-content">
+          <a href="https://github.com/Julio-code-sesi/TabelaViagem-Front-end-" target="_blank" class="github-link">
+              <i class="fab fa-github"></i> <!-- Ícone do GitHub -->
+              <span>Link do Projeto</span> <!-- Texto ao lado do ícone -->
+          </a>
+      </div>
+  </footer>
+
+</body>
+</html> 
